@@ -32,23 +32,25 @@ defineProps<{
 
 <style scoped>
 .sidebar {
-  min-width: 195px;
-  max-width: 220px;
+  min-width: 185px;
+  max-width: 215px;
   background: #fff;
-  border-right: 2px solid #efefef;
-  box-shadow: 1px 0 8px #0001;
-  padding: 2.2rem 0.6rem 1rem 0.8rem;
+  border-right: 2.3px solid #eff1f5;
+  box-shadow: 1px 0 8px #1976d210;
+  padding: 2.2rem 0.6rem 1.2rem 1.15rem;
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
 }
 .cat-title {
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   color: var(--secondary);
-  font-weight: 600;
-  margin-bottom: 1.15rem;
-  letter-spacing: 1px;
+  font-weight: 610;
+  margin-bottom: 1.07rem;
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 .category-list {
   list-style: none;
@@ -56,21 +58,23 @@ defineProps<{
   padding: 0;
 }
 .category-list li {
-  padding: 0.65rem 1rem;
-  border-radius: var(--border-radius);
-  margin-bottom: 0.15rem;
+  padding: 0.53rem 1rem 0.53rem 1.15rem;
+  border-radius: 7px;
+  margin-bottom: 0.10rem;
   cursor: pointer;
   color: #323246;
-  font-size: 1.06rem;
+  font-size: 1.04rem;
   font-family: inherit;
-  transition: background 0.13s, color 0.13s;
+  transition: background 0.12s, color 0.12s, box-shadow 0.13s;
   outline: none;
+  border: none;
 }
 .category-list li.selected,
 .category-list li:hover,
 .category-list li:focus {
   background: var(--primary);
   color: #fff;
+  box-shadow: 0 3px 6px #1976d218;
 }
 
 @media (max-width: 900px) {
@@ -88,7 +92,7 @@ defineProps<{
   }
   .category-list {
     display: flex;
-    gap: 14px;
+    gap: 13px;
     align-items: center;
     flex-direction: row;
     width: 100%;
@@ -96,12 +100,14 @@ defineProps<{
   .cat-title {
     margin-right: 1rem;
     margin-bottom: 0;
-    min-width: 72px;
+    min-width: 67px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
   }
   .category-list li {
     margin-bottom: 0;
-    padding: 0.55rem 1.1rem;
-    font-size: 1rem;
+    padding: 0.52rem 1.1rem;
+    font-size: 0.98rem;
   }
 }
 </style>

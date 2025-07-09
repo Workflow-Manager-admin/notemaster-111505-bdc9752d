@@ -117,64 +117,73 @@ function onKey (e: KeyboardEvent) {
   position: fixed;
   z-index: 70;
   inset: 0;
-  background: #23272e26;
+  background: #23272e21;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2vw;
 }
+
 .modal-window {
   background: #fff;
   color: var(--text-main);
   border-radius: var(--border-radius);
-  min-width: 320px;
-  max-width: 98vw;
-  width: 370px;
-  box-shadow: 0 2px 18px #0002;
-  padding: 0 1.3rem 1.3rem 1.3rem;
-  animation: fadeInUp 0.25s;
-  border: 2.5px solid var(--primary);
+  min-width: 314px;
+  max-width: 99vw;
+  width: 374px;
+  box-shadow: 0 2.5px 22px #1976d215, 0 1.5px 2.5px #42424212;
+  padding: 0 1.4rem 1.15rem 1.4rem;
+  animation: fadeInUp 0.23s;
+  border: 2.1px solid var(--primary);
 }
+
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(35px);}
   100% { opacity: 1; transform: none;}
 }
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 0 0.8rem 0;
+  padding: 1.3rem 0 0.77rem 0;
 }
+
 .modal-title {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 600;
   color: var(--primary);
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.4em;
+  letter-spacing: 0.01em;
+  font-family: inherit;
 }
+
 .accent-icon {
   color: var(--accent);
-  font-size: 1.4em;
+  font-size: 1.39em;
 }
+
 .close-btn {
   background: none;
-  border: 0;
+  border: none;
   color: #888;
-  font-size: 2.1em;
-  margin-left: 1.5em;
-  border-radius: 9px;
-  padding: 0.13em 0.1em;
+  font-size: 2.08em;
+  margin-left: 1.1em;
+  border-radius: 10px;
+  padding: 0.10em 0.1em;
   cursor: pointer;
+  transition: background 0.13s;
 }
 .close-btn:hover, .close-btn:focus {
-  background: #eee;
+  background: #f4f4f7;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 1.08rem;
+  gap: 0.99rem;
 }
 .form-group {
   display: flex;
@@ -183,70 +192,72 @@ form {
   margin-bottom: 5px;
 }
 .form-group label {
-  font-size: 1.01rem;
-  letter-spacing: 0.35px;
-  color: #111a;
-  font-weight: 510;
-  margin-bottom: 0.21rem;
+  font-size: 1.010rem;
+  letter-spacing: 0.2px;
+  color: #23272Edd;
+  font-weight: 495;
+  margin-bottom: 0.20rem;
 }
 input,
 textarea,
 select {
   font-family: inherit;
-  border: 1.4px solid #ddd;
+  border: 1.35px solid #e0e3ea;
   border-radius: var(--border-radius);
   font-size: 1.08rem;
-  padding: 0.53em 1em;
+  padding: 0.51em 1.01em;
   margin-bottom: 2px;
   outline: none;
-  transition: border-color 0.16s;
+  transition: border-color 0.15s, background 0.14s;
+  background: #f8fbfd;
 }
 input:focus, textarea:focus, select:focus {
   border-color: var(--primary);
-  background: #f8fcff;
+  background: #f2faff;
 }
 textarea {
   resize: vertical;
 }
 .modal-actions {
   display: flex;
-  gap: 0.85rem;
+  gap: 0.74rem;
   align-items: center;
   justify-content: flex-end;
-  padding-top: 12px;
+  padding-top: 9px;
 }
 .save-btn {
   background: var(--primary);
   color: #fff;
-  font-weight: 600;
+  font-weight: 590;
   border-radius: var(--border-radius);
   border: 0;
-  padding: 0.48em 1.08em;
+  padding: 0.47em 1.01em;
   font-size: 1.05rem;
   display: flex;
   align-items: center;
-  gap: 0.3em;
+  gap: 0.25em;
   cursor: pointer;
-  transition: filter 0.12s;
+  transition: background 0.14s, filter 0.10s;
 }
 .save-btn:hover, .save-btn:focus {
-  filter: brightness(1.08);
+  background: #1a85e7;
+  filter: brightness(1.09);
 }
 .cancel-btn {
   background: none;
   color: var(--secondary);
   border: none;
   border-radius: var(--border-radius);
-  padding: 0.48em 1em;
+  padding: 0.45em 0.96em;
   font-size: 1.05rem;
   cursor: pointer;
   transition: background 0.11s;
 }
 .cancel-btn:hover, .cancel-btn:focus {
-  background: #f9f9f9;
+  background: #fafbfc;
 }
 @media (max-width: 540px) {
-  .modal-window { width: 97vw; min-width: 0; padding: 0 0.3rem 0.8rem 0.3rem;}
+  .modal-window { width: 97vw; min-width: 0; padding: 0 0.4rem 0.89rem 0.4rem;}
   .modal-backdrop {padding: 0;}
 }
 </style>

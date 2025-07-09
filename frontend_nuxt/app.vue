@@ -132,7 +132,8 @@ watch(notes, saveNotesToStorage, { deep: true })
   --secondary: #424242;
   --background: #f7f9fa;
   --text-main: #23272E;
-  --border-radius: 8px;
+  --border-radius: 12px;
+  --nav-height: 62px;
 }
 
 .app-root {
@@ -141,6 +142,8 @@ watch(notes, saveNotesToStorage, { deep: true })
   color: var(--text-main);
   display: flex;
   flex-direction: column;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 .main-content {
@@ -148,56 +151,78 @@ watch(notes, saveNotesToStorage, { deep: true })
   flex: 1 1 auto;
   margin: 0;
   padding: 0;
+  min-height: calc(100vh - var(--nav-height));
+  background: var(--background);
+  transition: background 0.2s;
 }
+
+/* Sidebar handled in own component */
 
 .notes-section {
   flex: 1 1 0;
-  padding: 2rem 1rem 1rem 0.5rem;
+  padding: 2.2rem 2vw 1.2rem 1vw;
   display: flex;
   flex-direction: column;
   background: #fff;
   min-height: 0;
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  box-shadow: 0 0 10px 0 #0001;
+  box-shadow: 0 0 16px 0 #0002;
+  margin-left: 0.6rem;
 }
 
 .notes-toolbar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 .search-input {
-  border: 1px solid #e0e0e0;
+  border: 1.5px solid #e2e7ef;
   border-radius: var(--border-radius);
-  padding: 0.5rem 1rem;
+  padding: 0.57rem 1.25rem;
   font-size: 1rem;
   width: 100%;
-  max-width: 320px;
-  transition: border-color 0.2s;
+  max-width: 330px;
+  background: #f8fbff;
+  color: var(--secondary);
+  box-shadow: 0 1.5px 6px 0 #1976d205;
+  transition: border-color 0.17s, box-shadow 0.13s;
 }
 .search-input:focus {
   border-color: var(--primary);
   outline: none;
+  background: #f2faff;
+  box-shadow: 0 2px 8px 0 #1976d215;
 }
 
 @media (max-width: 900px) {
   .main-content {
     flex-direction: column;
+    min-height: unset;
   }
   .notes-section {
-    padding: 1rem 0.5rem;
     border-radius: 0;
+    padding: 1.2rem 0.7rem;
+    margin-left: 0;
+    box-shadow: 0 1px 11px #0002;
   }
 }
 
 @media (max-width: 650px) {
+  .main-content {
+    flex-direction: column;
+  }
   .sidebar {
     min-width: 100vw !important;
     max-width: 100vw !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+  }
+  .notes-section {
+    border-radius: 0;
+    padding: 0.44rem 0.1rem 0.7rem 0.1rem;
+    box-shadow: none;
   }
 }
 </style>
